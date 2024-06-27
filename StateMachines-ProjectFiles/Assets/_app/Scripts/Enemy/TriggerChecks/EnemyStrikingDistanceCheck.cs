@@ -5,13 +5,13 @@ namespace _app.Scripts.Enemy.TriggerChecks
     public class EnemyStrikingDistanceCheck : MonoBehaviour
     {
         public GameObject PlayerTarget { get; set; }
-        public Base.Enemy _enemy;
+        private Base.Enemy _enemy;
 
         private void Awake()
         {
             PlayerTarget = GameObject.FindGameObjectWithTag("Player");
 
-            //_enemy = this.getComponentInParent<Base.Enemy>();
+            _enemy = GetComponentInParent<Base.Enemy>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
